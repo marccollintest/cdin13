@@ -128,7 +128,7 @@ public class ClientTest {
 	{
 		Client oClt = new Client ("N",2000);
 		boolean bRes = oClt.accepte(6000);
-		assertTrue(bRes);		
+		assertFalse(bRes);		
 	}
 //N	>3000	<1000	OK
 	@Test

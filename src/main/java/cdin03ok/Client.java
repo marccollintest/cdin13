@@ -31,6 +31,13 @@ public class Client {
 						bReturn = true;
 					}
 				}
+				if (_encours>1000 && _encours<3000)
+				{
+					if (pMontant >5000)
+					{
+						bReturn = false;
+					}
+				}
 			}
 		if(_type.equals("P"))
 			{
