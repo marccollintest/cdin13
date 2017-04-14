@@ -17,7 +17,7 @@ public class ClientASurveiller extends Client {
 		boolean bReturn = false;
 				if (_encours<1000)
 				{
-					if (pMontant <5000)
+					if (pMontant <=5000)
 					{
 						bReturn = true;
 					}

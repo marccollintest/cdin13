@@ -20,6 +20,12 @@ public class ClientTest {
 		Client oClt = new ClientASurveiller(900);
 		boolean bRes = oClt.accepte(900);
 		assertTrue(bRes);		
+
+		oClt = new ClientASurveiller(999);
+		bRes = oClt.accepte(999);
+		assertTrue(bRes);		
+	
+	
 	}
 //S	<1000	[1000-5000]	OK
 	@Test
@@ -29,12 +35,33 @@ public class ClientTest {
 		boolean bRes = oClt.accepte(3000);
 		assertTrue(bRes);		
 	}
+	@Test
+	public void test2a()
+	{
+		Client oClt = new ClientASurveiller(999);
+		boolean bRes = oClt.accepte(1000);
+		assertTrue(bRes);		
+	}
+	@Test
+	public void test2b()
+	{
+		Client oClt = new ClientASurveiller(999);
+		boolean bRes = oClt.accepte(5000);
+		assertTrue(bRes);		
+	}
 //S	<1000	>5000	NOK
 	@Test
 	public void test3()
 	{
 		Client oClt = new ClientASurveiller(900);
 		boolean bRes = oClt.accepte(6000);
+		assertFalse(bRes);		
+	}
+	@Test
+	public void test3a()
+	{
+		Client oClt = new ClientASurveiller(999);
+		boolean bRes = oClt.accepte(5001);
 		assertFalse(bRes);		
 	}
 //S	[1000-3000]	<1000	OK
@@ -230,4 +257,10 @@ public class ClientTest {
 		assertFalse(bRes);		
 	}
 
+	public void test2TOTO()
+	{
+		Client oClt = new ClientPremium(6000);
+		boolean bRes = oClt.accepte(6000);
+		assertFalse(bRes);		
+	}
 }
